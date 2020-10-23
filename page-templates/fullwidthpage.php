@@ -16,9 +16,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 if ( is_front_page() ) {
 	get_template_part( 'global-templates/hero' );
 }
+
+
+$acf_header = get_field('header_test');
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
+
+	<h1 class="text-center"><?php echo $acf_header ?></h1>
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 

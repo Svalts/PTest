@@ -3,9 +3,9 @@
     "title": "Sample Custom Fields",
     "fields": [
         {
-            "key": "field_5f8f403104964",
-            "label": "test field",
-            "name": "test_field",
+            "key": "field_5f92278987735",
+            "label": "Header Test",
+            "name": "header_test",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -25,19 +25,19 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_template",
                 "operator": "==",
-                "value": "post"
+                "value": "page-templates\/fullwidthpage.php"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603223612
+    "modified": 1603414116
 }
