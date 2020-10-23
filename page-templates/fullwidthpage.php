@@ -8,19 +8,24 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod('understrap_container_type');
 
-if ( is_front_page() ) {
-	get_template_part( 'global-templates/hero' );
+if (is_front_page()) {
+    get_template_part('global-templates/hero');
 }
+
+//ACF Variables
+$acf_header = get_field('header_test');
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+	<h1 class="text-center"><?php echo $acf_header ?></h1>
+
+	<div class="<?php echo esc_attr($container); ?>" id="content">
 
 		<div class="row">
 
@@ -28,17 +33,23 @@ if ( is_front_page() ) {
 
 				<main class="site-main" id="main" role="main">
 
-					<?php
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'loop-templates/content', 'page' );
+					<div class="slick-slider-1">
+						<div><a href="https://placeholder.com/"><img src="https://via.placeholder.com/1200"/></a></div>
+						<div><a href="https://placeholder.com/"><img src="https://via.placeholder.com/1200"/></a></div>
+						<div><a href="https://placeholder.com/"><img src="https://via.placeholder.com/1200"/></a></div>
+					</div>
 
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
-							comments_template();
-						}
-					}
-					?>
+					<?php
+                    while (have_posts()) {
+                        the_post();
+                        get_template_part('loop-templates/content', 'page');
+
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if (comments_open() || get_comments_number()) {
+                            comments_template();
+                        }
+                    }
+                    ?>
 
 				</main><!-- #main -->
 
@@ -49,6 +60,5 @@ if ( is_front_page() ) {
 	</div><!-- #content -->
 
 </div><!-- #full-width-page-wrapper -->
-
 <?php
 get_footer();
