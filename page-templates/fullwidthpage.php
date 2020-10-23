@@ -17,7 +17,7 @@ if ( is_front_page() ) {
 	get_template_part( 'global-templates/hero' );
 }
 
-
+//ACF Variables 
 $acf_header = get_field('header_test');
 ?>
 
